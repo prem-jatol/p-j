@@ -4,14 +4,12 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
   <title>Prem Jatol · Full Stack Developer</title>
-  <!-- Font Awesome 6 (free) -->
+  <!-- Font Awesome 6 -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-  <!-- AOS - Animate On Scroll (smooth animations) -->
-  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-  <!-- Google Font: Inter + Poppins (clean, modern) -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <!-- Google Fonts: Inter + Poppins -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
   <style>
-    /* ----- GLOBAL RESET & DARK THEME ----- */
+    /* ----- GLOBAL RESET & WHITE THEME ----- */
     * {
       margin: 0;
       padding: 0;
@@ -25,8 +23,8 @@
 
     body {
       font-family: 'Inter', sans-serif;
-      background-color: #0b0d10;
-      color: #e5e9f0;
+      background-color: #ffffff;
+      color: #1e293b;
       line-height: 1.6;
       overflow-x: hidden;
     }
@@ -36,19 +34,19 @@
       color: inherit;
     }
 
-    /* custom scrollbar */
+    /* custom scrollbar – light grey */
     ::-webkit-scrollbar {
       width: 10px;
     }
     ::-webkit-scrollbar-track {
-      background: #15181c;
+      background: #f1f5f9;
     }
     ::-webkit-scrollbar-thumb {
-      background: #2f3540;
+      background: #cbd5e1;
       border-radius: 8px;
     }
     ::-webkit-scrollbar-thumb:hover {
-      background: #4f9cf9;
+      background: #2563eb;
     }
 
     .container {
@@ -65,7 +63,7 @@
       position: relative;
       display: inline-block;
       letter-spacing: -0.01em;
-      color: #fff;
+      color: #0f172a;
     }
     .section-title::after {
       content: '';
@@ -74,7 +72,7 @@
       left: 0;
       width: 70px;
       height: 4px;
-      background: linear-gradient(90deg, #4f9cf9, #00e0ff);
+      background: linear-gradient(90deg, #2563eb, #38bdf8);
       border-radius: 4px;
     }
 
@@ -86,41 +84,40 @@
       font-weight: 600;
       font-size: 0.95rem;
       letter-spacing: 0.3px;
-      transition: all 0.3s ease;
+      transition: all 0.2s ease;
       cursor: pointer;
       border: none;
       background: transparent;
     }
     .btn-primary {
-      background: #4f9cf9;
-      color: #0b0d10;
-      box-shadow: 0 8px 20px rgba(79, 156, 249, 0.25);
+      background: #2563eb;
+      color: white;
+      box-shadow: 0 8px 16px rgba(37, 99, 235, 0.2);
     }
     .btn-primary:hover {
-      background: #2d7ae0;
+      background: #1d4ed8;
       transform: translateY(-3px);
-      box-shadow: 0 12px 28px rgba(79, 156, 249, 0.4);
+      box-shadow: 0 12px 24px rgba(37, 99, 235, 0.3);
     }
     .btn-outline {
-      border: 1.5px solid #4f9cf9;
-      color: #e5e9f0;
+      border: 1.5px solid #2563eb;
+      color: #2563eb;
       background: transparent;
     }
     .btn-outline:hover {
-      background: rgba(79, 156, 249, 0.1);
-      border-color: #7bb3fd;
+      background: rgba(37, 99, 235, 0.05);
       transform: translateY(-3px);
     }
 
-    /* navbar */
+    /* navbar – light */
     .navbar {
       padding: 20px 0;
       position: sticky;
       top: 0;
-      background: rgba(11, 13, 16, 0.85);
+      background: rgba(255, 255, 255, 0.85);
       backdrop-filter: blur(12px);
       z-index: 1000;
-      border-bottom: 1px solid rgba(255,255,255,0.05);
+      border-bottom: 1px solid #e2e8f0;
     }
     .nav-container {
       display: flex;
@@ -130,7 +127,7 @@
     .logo {
       font-size: 1.8rem;
       font-weight: 800;
-      background: linear-gradient(145deg, #ffffff, #b0d4ff);
+      background: linear-gradient(145deg, #0f172a, #2563eb);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       letter-spacing: -0.5px;
@@ -141,44 +138,36 @@
       font-weight: 500;
     }
     .nav-links a {
-      color: #cbd5e6;
+      color: #334155;
       transition: color 0.2s;
       font-size: 0.95rem;
     }
     .nav-links a:hover {
-      color: #4f9cf9;
+      color: #2563eb;
     }
     .hamburger {
       display: none;
       font-size: 1.8rem;
-      color: white;
+      color: #0f172a;
       cursor: pointer;
     }
 
-    /* cards & layout */
-    .grid-2, .grid-3, .grid-4 {
-      display: grid;
-      gap: 28px;
-    }
-    .grid-2 { grid-template-columns: repeat(2, 1fr); }
-    .grid-3 { grid-template-columns: repeat(3, 1fr); }
-    .grid-4 { grid-template-columns: repeat(4, 1fr); }
-
+    /* cards – white with subtle shadow */
     .card {
-      background: #151a1f;
+      background: white;
       border-radius: 24px;
       padding: 28px 24px;
-      transition: all 0.3s ease;
-      border: 1px solid rgba(255,255,255,0.03);
-      box-shadow: 0 10px 30px -10px rgba(0,0,0,0.5);
+      transition: all 0.25s ease;
+      border: 1px solid #eef2f6;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.02);
     }
     .card:hover {
-      transform: translateY(-8px);
-      border-color: rgba(79, 156, 249, 0.3);
-      box-shadow: 0 20px 40px -10px #1f2a3f;
+      transform: translateY(-6px);
+      border-color: #b1d0ff;
+      box-shadow: 0 20px 28px -8px rgba(0, 27, 55, 0.1);
     }
 
-    /* stats */
+    /* stats – light */
     .stats-wrapper {
       display: flex;
       justify-content: space-around;
@@ -192,48 +181,48 @@
     .stat-number {
       font-size: 2.6rem;
       font-weight: 800;
-      color: #4f9cf9;
+      color: #2563eb;
       line-height: 1;
     }
     .stat-label {
-      color: #a6b7d4;
+      color: #475569;
       text-transform: uppercase;
       letter-spacing: 1px;
       font-size: 0.85rem;
     }
 
-    /* skills tags */
+    /* skills tags – light */
     .skill-tag {
       display: inline-block;
-      background: #1f2a36;
+      background: #f1f5f9;
       padding: 8px 18px;
       border-radius: 40px;
       font-size: 0.85rem;
       font-weight: 500;
       margin: 0 6px 10px 0;
-      color: #d1e0f0;
-      border: 1px solid #2c3845;
+      color: #1e293b;
+      border: 1px solid #e2e8f0;
       transition: 0.2s;
     }
     .skill-tag:hover {
-      background: #4f9cf9;
-      color: #0b0d10;
-      border-color: #4f9cf9;
+      background: #2563eb;
+      color: white;
+      border-color: #2563eb;
     }
 
     /* experience & education */
     .exp-item, .edu-item {
       padding-left: 20px;
-      border-left: 3px solid #4f9cf9;
+      border-left: 3px solid #2563eb;
       margin-bottom: 30px;
     }
     .exp-title, .edu-title {
       font-size: 1.3rem;
       font-weight: 700;
-      color: white;
+      color: #0f172a;
     }
     .exp-meta, .edu-meta {
-      color: #8fa6c2;
+      color: #475569;
       font-size: 0.9rem;
       margin-bottom: 10px;
       display: flex;
@@ -241,27 +230,48 @@
       flex-wrap: wrap;
     }
     .exp-desc {
-      color: #c2d0e0;
+      color: #334155;
     }
 
-    /* project card */
+    /* ---------- PROJECT CARDS with image gap ---------- */
     .project-card {
-      background: #151a1f;
+      background: white;
       border-radius: 20px;
       overflow: hidden;
-      border: 1px solid #232b33;
-      transition: all 0.25s;
+      border: 1px solid #edf2f7;
+      transition: all 0.25s ease;
+      display: flex;
+      flex-direction: column;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.02);
     }
     .project-card:hover {
-      border-color: #4f9cf9;
+      transform: translateY(-8px);
+      border-color: #2563eb;
+      box-shadow: 0 24px 32px -12px rgba(37, 99, 235, 0.12);
     }
+
+    /* project image placeholder – creates visual gap */
+    .project-image {
+      width: 100%;
+      height: 180px;
+      background: linear-gradient(145deg, #f0f9ff, #e0f2fe);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #2563eb;
+      font-size: 3rem;
+      border-bottom: 1px solid #e2e8f0;
+    }
+
     .project-info {
       padding: 24px;
     }
+
     .project-title {
       font-size: 1.4rem;
       font-weight: 700;
       margin-bottom: 8px;
+      color: #0f172a;
     }
     .project-tech {
       display: flex;
@@ -270,12 +280,12 @@
       margin: 16px 0;
     }
     .tech-badge {
-      background: #1e2a36;
+      background: #f1f5f9;
       padding: 5px 12px;
       border-radius: 30px;
       font-size: 0.7rem;
       font-weight: 600;
-      color: #b4d0fe;
+      color: #1e293b;
     }
     .project-links {
       display: flex;
@@ -283,15 +293,18 @@
       margin-top: 20px;
     }
     .project-links a {
-      color: #4f9cf9;
+      color: #2563eb;
       font-weight: 600;
       font-size: 0.9rem;
       display: flex;
       align-items: center;
       gap: 6px;
     }
+    .project-links a:hover {
+      color: #1d4ed8;
+    }
 
-    /* contact form */
+    /* contact form – light */
     .contact-form {
       display: grid;
       gap: 20px;
@@ -305,32 +318,33 @@
       grid-column: span 2;
     }
     input, select, textarea {
-      background: #1e242a;
-      border: 1px solid #2f3842;
+      background: white;
+      border: 1px solid #cbd5e1;
       padding: 15px 18px;
       border-radius: 14px;
-      color: white;
+      color: #0f172a;
       font-family: 'Inter', sans-serif;
       transition: 0.2s;
       outline: none;
     }
     input:focus, select:focus, textarea:focus {
-      border-color: #4f9cf9;
-      background: #242c34;
+      border-color: #2563eb;
+      box-shadow: 0 0 0 3px rgba(37,99,235,0.1);
     }
     label {
       margin-bottom: 8px;
       font-weight: 500;
-      color: #b0c6dd;
+      color: #334155;
     }
 
-    /* footer */
+    /* footer – light */
     .footer {
-      border-top: 1px solid #1f2a33;
+      border-top: 1px solid #e2e8f0;
       padding: 40px 0;
       margin-top: 60px;
       text-align: center;
-      color: #8ea5c0;
+      color: #475569;
+      background: #fafcff;
     }
 
     /* responsive */
@@ -352,7 +366,7 @@
       .btn { width: 100%; text-align: center; margin-bottom: 10px; }
     }
 
-    /* hero style */
+    /* hero section – light */
     .hero {
       padding: 60px 0 40px;
     }
@@ -361,25 +375,30 @@
       font-weight: 800;
       line-height: 1.2;
       margin-bottom: 10px;
-      background: linear-gradient(to right, #ffffff, #cde2ff);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
+      color: #0f172a;
     }
     .highlight {
-      color: #4f9cf9;
+      color: #2563eb;
     }
     .subhead {
       font-size: 1.3rem;
-      color: #b8d0e9;
+      color: #475569;
       font-weight: 500;
     }
     .intro-text {
       font-size: 1.1rem;
       max-width: 700px;
-      color: #c6d6eb;
+      color: #334155;
     }
 
-    /* utility */
+    /* utilities */
+    .grid-2, .grid-3, .grid-4 {
+      display: grid;
+      gap: 28px;
+    }
+    .grid-2 { grid-template-columns: repeat(2, 1fr); }
+    .grid-3 { grid-template-columns: repeat(3, 1fr); }
+    .grid-4 { grid-template-columns: repeat(4, 1fr); }
     .mt-4 { margin-top: 40px; }
     .mb-2 { margin-bottom: 20px; }
     .text-center { text-align: center; }
@@ -387,7 +406,7 @@
 </head>
 <body>
 
-  <!-- ✅ NAVIGATION (sticky, smooth) -->
+  <!-- NAVIGATION (light) -->
   <nav class="navbar">
     <div class="container nav-container">
       <div class="logo">Prem.dev</div>
@@ -407,7 +426,7 @@
   <!-- 1️⃣ HERO SECTION -->
   <section id="home" class="hero">
     <div class="container">
-      <div data-aos="fade-up" data-aos-duration="900">
+      <div>
         <h1>Hi, I’m Prem Jatol</h1>
         <div class="subhead">Full Stack Developer | MERN Stack Specialist</div>
         <p class="intro-text mt-4">I build high-performance websites, dashboards, CRM systems & admin panels for international clients. 1+ year of industry experience working with clients from USA, UK, Germany & Australia. Passionate about scalable, responsive & SEO-friendly web apps.</p>
@@ -416,17 +435,17 @@
           <a href="#contact" class="btn btn-outline"><i class="fas fa-paper-plane" style="margin-right: 8px;"></i>Hire Me</a>
         </div>
 
-        <!-- STATS (design suggestion) -->
+        <!-- STATS (light) -->
         <div class="stats-wrapper">
-          <div class="stat-item" data-aos="zoom-in" data-aos-delay="100">
+          <div class="stat-item">
             <div class="stat-number">10+</div>
             <div class="stat-label">Projects Delivered</div>
           </div>
-          <div class="stat-item" data-aos="zoom-in" data-aos-delay="200">
+          <div class="stat-item">
             <div class="stat-number">1+</div>
             <div class="stat-label">Years Experience</div>
           </div>
-          <div class="stat-item" data-aos="zoom-in" data-aos-delay="300">
+          <div class="stat-item">
             <div class="stat-number">🌍</div>
             <div class="stat-label">International Clients</div>
           </div>
@@ -438,16 +457,16 @@
   <!-- 2️⃣ ABOUT ME SECTION -->
   <section id="about" style="padding: 70px 0 30px;">
     <div class="container">
-      <h2 class="section-title" data-aos="fade-right">About Me</h2>
+      <h2 class="section-title">About Me</h2>
       <div class="grid-2" style="align-items: center;">
-        <div data-aos="fade-right" data-aos-delay="100">
-          <p style="font-size: 1.15rem; color: #e2ecff; margin-bottom: 20px;">I’m a passionate Full Stack Web Developer with 1+ year of industry experience. Currently working as a React Developer at a <span class="highlight">CMMI Level 3 company</span>, building dashboards, CRM systems, and admin panels for Tier-1 international clients.</p>
-          <p style="color: #c2d6f0;">I specialize in scalable, high-performance web apps using React.js, Next.js, Node.js, MongoDB. Along with corporate work, I freelance to help service providers grow through professional websites that increase visibility & client conversions. Clean code, optimized performance & real business results.</p>
+        <div>
+          <p style="font-size: 1.15rem; color: #0f172a; margin-bottom: 20px;">I’m a passionate Full Stack Web Developer with 1+ year of industry experience. Currently working as a React Developer at a <span class="highlight">CMMI Level 3 company</span>, building dashboards, CRM systems, and admin panels for Tier-1 international clients.</p>
+          <p style="color: #334155;">I specialize in scalable, high-performance web apps using React.js, Next.js, Node.js, MongoDB. Along with corporate work, I freelance to help service providers grow through professional websites that increase visibility & client conversions. Clean code, optimized performance & real business results.</p>
         </div>
-        <div class="card" data-aos="fade-left" data-aos-delay="200" style="background: #0f1419; border: 1px solid #2a3540;">
-          <i class="fas fa-quote-right" style="font-size: 2rem; color: #4f9cf9; opacity: 0.4;"></i>
-          <p style="font-size: 1.2rem; font-style: italic; margin-top: 15px;">"Delivering excellence in every line of code."</p>
-          <p style="color: #aac8ff; margin-top: 20px;">📍 Barmer, Rajasthan, India</p>
+        <div class="card" style="background: #ffffff; border: 1px solid #e2e8f0;">
+          <i class="fas fa-quote-right" style="font-size: 2rem; color: #2563eb; opacity: 0.4;"></i>
+          <p style="font-size: 1.2rem; font-style: italic; margin-top: 15px; color: #0f172a;">"Delivering excellence in every line of code."</p>
+          <p style="color: #2563eb; margin-top: 20px;">📍 Barmer, Rajasthan, India</p>
         </div>
       </div>
     </div>
@@ -456,26 +475,26 @@
   <!-- 3️⃣ SKILLS SECTION -->
   <section id="skills" style="padding: 60px 0;">
     <div class="container">
-      <h2 class="section-title" data-aos="fade-right">Skills & Expertise</h2>
+      <h2 class="section-title">Skills & Expertise</h2>
       <div class="grid-4" style="margin-top: 30px;">
-        <div class="card" data-aos="flip-left" data-aos-delay="50">
-          <h3 style="font-size: 1.6rem; margin-bottom: 18px; color: white;"><i class="fas fa-code" style="color: #4f9cf9; margin-right: 8px;"></i>Frontend</h3>
-          <div>React.js · Next.js · JavaScript (ES6+) · Tailwind · Bootstrap · Material UI · Responsive</div>
+        <div class="card">
+          <h3 style="font-size: 1.6rem; margin-bottom: 18px; color: #0f172a;"><i class="fas fa-code" style="color: #2563eb; margin-right: 8px;"></i>Frontend</h3>
+          <div style="color: #334155;">React.js · Next.js · JavaScript (ES6+) · Tailwind · Bootstrap · Material UI · Responsive</div>
         </div>
-        <div class="card" data-aos="flip-left" data-aos-delay="100">
-          <h3 style="font-size: 1.6rem; margin-bottom: 18px; color: white;"><i class="fas fa-server" style="color: #4f9cf9;"></i> Backend</h3>
-          <div>Node.js · Express.js · Laravel · PHP</div>
+        <div class="card">
+          <h3 style="font-size: 1.6rem; margin-bottom: 18px; color: #0f172a;"><i class="fas fa-server" style="color: #2563eb;"></i> Backend</h3>
+          <div style="color: #334155;">Node.js · Express.js · Laravel · PHP</div>
         </div>
-        <div class="card" data-aos="flip-left" data-aos-delay="150">
-          <h3 style="font-size: 1.6rem; margin-bottom: 18px; color: white;"><i class="fas fa-database"></i> Database</h3>
-          <div>MongoDB · MySQL</div>
+        <div class="card">
+          <h3 style="font-size: 1.6rem; margin-bottom: 18px; color: #0f172a;"><i class="fas fa-database"></i> Database</h3>
+          <div style="color: #334155;">MongoDB · MySQL</div>
         </div>
-        <div class="card" data-aos="flip-left" data-aos-delay="200">
-          <h3 style="font-size: 1.6rem; margin-bottom: 18px; color: white;"><i class="fas fa-toolbox"></i> Other</h3>
-          <div>REST APIs · SEO-Friendly · Admin Panels · CRM · Deployment</div>
+        <div class="card">
+          <h3 style="font-size: 1.6rem; margin-bottom: 18px; color: #0f172a;"><i class="fas fa-toolbox"></i> Other</h3>
+          <div style="color: #334155;">REST APIs · SEO-Friendly · Admin Panels · CRM · Deployment</div>
         </div>
       </div>
-      <!-- detailed skill tags -->
+      <!-- skill tags -->
       <div style="margin-top: 40px;">
         <span class="skill-tag">React.js</span><span class="skill-tag">Next.js</span><span class="skill-tag">JavaScript</span>
         <span class="skill-tag">Tailwind</span><span class="skill-tag">Material UI</span><span class="skill-tag">Node.js</span>
@@ -487,11 +506,11 @@
   </section>
 
   <!-- 4️⃣ EXPERIENCE SECTION -->
-  <section id="experience" style="padding: 50px 0; background: #0e1217;">
+  <section id="experience" style="padding: 50px 0; background: #f8fafc;">
     <div class="container">
-      <h2 class="section-title" data-aos="fade-right">Work Experience</h2>
+      <h2 class="section-title">Work Experience</h2>
       <div class="grid-2" style="margin-top: 40px;">
-        <div data-aos="fade-up">
+        <div>
           <div class="exp-item">
             <div class="exp-title">Ways & Means Technology Pvt. Ltd.</div>
             <div class="exp-meta"><span>React Developer</span> · <span>May 2025 – Present</span> · Jaipur</div>
@@ -503,7 +522,7 @@
             <p class="exp-desc">Built responsive & scalable MERN apps, REST APIs, database integration. Live deployment & maintenance, hands-on project workflows.</p>
           </div>
         </div>
-        <div data-aos="fade-up" data-aos-delay="150">
+        <div>
           <div class="exp-item">
             <div class="exp-title">DevDevGo.com</div>
             <div class="exp-meta"><span>Web Developer</span> · <span>Feb 2024 – Apr 2024</span> · Remote</div>
@@ -522,46 +541,46 @@
   <!-- 5️⃣ SERVICES SECTION -->
   <section id="services" style="padding: 70px 0;">
     <div class="container">
-      <h2 class="section-title" data-aos="fade-right">Services</h2>
+      <h2 class="section-title">Services</h2>
       <div class="grid-3" style="margin-top: 40px;">
-        <div class="card" data-aos="fade-up" data-aos-delay="50">
-          <i class="fas fa-globe" style="font-size: 2.5rem; color: #4f9cf9;"></i>
-          <h3 style="margin: 18px 0 12px;">Website Development</h3>
-          <p>Professional business websites that convert visitors into clients. SEO-optimized, blazing fast.</p>
+        <div class="card">
+          <i class="fas fa-globe" style="font-size: 2.5rem; color: #2563eb;"></i>
+          <h3 style="margin: 18px 0 12px; color:#0f172a;">Website Development</h3>
+          <p style="color:#334155;">Professional business websites that convert visitors into clients. SEO-optimized, blazing fast.</p>
         </div>
-        <div class="card" data-aos="fade-up" data-aos-delay="100">
-          <i class="fas fa-chart-pie" style="font-size: 2.5rem; color: #4f9cf9;"></i>
-          <h3 style="margin: 18px 0 12px;">Dashboard & Admin Panels</h3>
-          <p>Custom dashboards, CRM systems, and automation tools tailored to your business workflow.</p>
+        <div class="card">
+          <i class="fas fa-chart-pie" style="font-size: 2.5rem; color: #2563eb;"></i>
+          <h3 style="margin: 18px 0 12px; color:#0f172a;">Dashboard & Admin Panels</h3>
+          <p style="color:#334155;">Custom dashboards, CRM systems, and automation tools tailored to your business workflow.</p>
         </div>
-        <div class="card" data-aos="fade-up" data-aos-delay="150">
-          <i class="fas fa-cart-shopping" style="font-size: 2.5rem; color: #4f9cf9;"></i>
-          <h3 style="margin: 18px 0 12px;">E‑commerce Development</h3>
-          <p>Modern online stores with secure payment integration, inventory, and full backend support.</p>
+        <div class="card">
+          <i class="fas fa-cart-shopping" style="font-size: 2.5rem; color: #2563eb;"></i>
+          <h3 style="margin: 18px 0 12px; color:#0f172a;">E‑commerce Development</h3>
+          <p style="color:#334155;">Modern online stores with secure payment integration, inventory, and full backend support.</p>
         </div>
-        <div class="card" data-aos="fade-up" data-aos-delay="200">
-          <i class="fas fa-tachometer-alt" style="font-size: 2.5rem; color: #4f9cf9;"></i>
-          <h3 style="margin: 18px 0 12px;">Performance Optimization</h3>
-          <p>Speed, SEO structure, and best coding practices – making your site outrun competitors.</p>
+        <div class="card">
+          <i class="fas fa-tachometer-alt" style="font-size: 2.5rem; color: #2563eb;"></i>
+          <h3 style="margin: 18px 0 12px; color:#0f172a;">Performance Optimization</h3>
+          <p style="color:#334155;">Speed, SEO structure, and best coding practices – making your site outrun competitors.</p>
         </div>
       </div>
     </div>
   </section>
 
   <!-- 6️⃣ EDUCATION SECTION -->
-  <section id="education" style="padding: 40px 0 60px; background: #0a0d10;">
+  <section id="education" style="padding: 40px 0 60px; background: #ffffff;">
     <div class="container">
-      <h2 class="section-title" data-aos="fade-right">Education</h2>
+      <h2 class="section-title">Education</h2>
       <div class="grid-2" style="margin-top: 30px;">
-        <div class="edu-item" data-aos="fade-right">
+        <div class="edu-item">
           <div class="edu-title">🎓 Master of Computer Applications (MCA)</div>
           <div class="edu-meta">Rajasthan Technical University · 2025 – 2027</div>
         </div>
-        <div class="edu-item" data-aos="fade-left" data-aos-delay="100">
+        <div class="edu-item">
           <div class="edu-title">📘 Web Development Certification</div>
           <div class="edu-meta">WsCube Tech · 2023 – 2024</div>
         </div>
-        <div class="edu-item" data-aos="fade-right" data-aos-delay="150">
+        <div class="edu-item">
           <div class="edu-title">🔬 Bachelor of Science (BSc)</div>
           <div class="edu-meta">JNVU, Jodhpur · 2019 – 2022</div>
         </div>
@@ -569,16 +588,20 @@
     </div>
   </section>
 
-  <!-- 7️⃣ PROJECTS SECTION (added real projects) -->
+  <!-- 7️⃣ PROJECTS SECTION – with image gap and hover animations -->
   <section id="projects" style="padding: 70px 0;">
     <div class="container">
-      <h2 class="section-title" data-aos="fade-right">Recent Projects</h2>
+      <h2 class="section-title">Recent Projects</h2>
       <div class="grid-3" style="margin-top: 40px;">
-        <!-- project 1 -->
-        <div class="project-card" data-aos="zoom-in-up" data-aos-delay="0">
+
+        <!-- Project 1 with image placeholder -->
+        <div class="project-card">
+          <div class="project-image">
+            <i class="fas fa-chart-line fa-4x"></i>
+          </div>
           <div class="project-info">
             <h3 class="project-title">Crown Dashboard</h3>
-            <p style="color: #b0cbe5;">Advanced admin panel with analytics, user management & role-based access. Built for international client.</p>
+            <p style="color: #475569;">Advanced admin panel with analytics, user management & role-based access. Built for international client.</p>
             <div class="project-tech">
               <span class="tech-badge">React</span>
               <span class="tech-badge">Node.js</span>
@@ -591,11 +614,15 @@
             </div>
           </div>
         </div>
-        <!-- project 2 -->
-        <div class="project-card" data-aos="zoom-in-up" data-aos-delay="100">
+
+        <!-- Project 2 with image placeholder -->
+        <div class="project-card">
+          <div class="project-image">
+            <i class="fas fa-store fa-4x"></i>
+          </div>
           <div class="project-info">
             <h3 class="project-title">UrbanCart E‑commerce</h3>
-            <p style="color: #b0cbe5;">Full-featured online store with cart, payment gateway, product filters and order dashboard.</p>
+            <p style="color: #475569;">Full-featured online store with cart, payment gateway, product filters and order dashboard.</p>
             <div class="project-tech">
               <span class="tech-badge">Next.js</span>
               <span class="tech-badge">Express</span>
@@ -608,11 +635,15 @@
             </div>
           </div>
         </div>
-        <!-- project 3 -->
-        <div class="project-card" data-aos="zoom-in-up" data-aos-delay="200">
+
+        <!-- Project 3 with image placeholder -->
+        <div class="project-card">
+          <div class="project-image">
+            <i class="fas fa-heartbeat fa-4x"></i>
+          </div>
           <div class="project-info">
             <h3 class="project-title">MediCare CRM</h3>
-            <p style="color: #b0cbe5;">Healthcare CRM system – patient records, appointment scheduling, analytics dashboard.</p>
+            <p style="color: #475569;">Healthcare CRM system – patient records, appointment scheduling, analytics dashboard.</p>
             <div class="project-tech">
               <span class="tech-badge">React</span>
               <span class="tech-badge">Laravel</span>
@@ -625,47 +656,48 @@
             </div>
           </div>
         </div>
+
       </div>
     </div>
   </section>
 
-  <!-- 8️⃣ TESTIMONIAL SECTION (optional but added) -->
-  <section id="testimonials" style="padding: 50px 0; background: #0e1319;">
+  <!-- 8️⃣ TESTIMONIAL SECTION (optional) -->
+  <section id="testimonials" style="padding: 50px 0; background: #f8fafc;">
     <div class="container">
-      <h2 class="section-title" data-aos="fade-right">Client Feedback</h2>
+      <h2 class="section-title">Client Feedback</h2>
       <div class="grid-2" style="margin-top: 30px;">
-        <div class="card" data-aos="fade-right">
-          <i class="fas fa-star" style="color: #ffb83b;"></i><i class="fas fa-star" style="color: #ffb83b;"></i><i class="fas fa-star" style="color: #ffb83b;"></i><i class="fas fa-star" style="color: #ffb83b;"></i><i class="fas fa-star" style="color: #ffb83b;"></i>
-          <p style="margin: 15px 0; font-size: 1.05rem;">"Prem delivered a flawless CRM dashboard ahead of schedule. His communication and code quality are top-notch."</p>
-          <p><strong>— Alex Thompson</strong> , UK · TechLead</p>
+        <div class="card">
+          <i class="fas fa-star" style="color: #fbbf24;"></i><i class="fas fa-star" style="color: #fbbf24;"></i><i class="fas fa-star" style="color: #fbbf24;"></i><i class="fas fa-star" style="color: #fbbf24;"></i><i class="fas fa-star" style="color: #fbbf24;"></i>
+          <p style="margin: 15px 0; font-size: 1.05rem; color: #334155;">"Prem delivered a flawless CRM dashboard ahead of schedule. His communication and code quality are top-notch."</p>
+          <p><strong style="color: #0f172a;">— Alex Thompson</strong> , UK · TechLead</p>
         </div>
-        <div class="card" data-aos="fade-left" data-aos-delay="100">
-          <i class="fas fa-star" style="color: #ffb83b;"></i><i class="fas fa-star" style="color: #ffb83b;"></i><i class="fas fa-star" style="color: #ffb83b;"></i><i class="fas fa-star" style="color: #ffb83b;"></i><i class="fas fa-star" style="color: #ffb83b;"></i>
-          <p style="margin: 15px 0; font-size: 1.05rem;">"Great experience working with Prem. He understood our requirements perfectly and built a modern e‑commerce site."</p>
-          <p><strong>— Sarah Williams</strong> , Australia · Founder</p>
+        <div class="card">
+          <i class="fas fa-star" style="color: #fbbf24;"></i><i class="fas fa-star" style="color: #fbbf24;"></i><i class="fas fa-star" style="color: #fbbf24;"></i><i class="fas fa-star" style="color: #fbbf24;"></i><i class="fas fa-star" style="color: #fbbf24;"></i>
+          <p style="margin: 15px 0; font-size: 1.05rem; color: #334155;">"Great experience working with Prem. He understood our requirements perfectly and built a modern e‑commerce site."</p>
+          <p><strong style="color: #0f172a;">— Sarah Williams</strong> , Australia · Founder</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- 9️⃣ CONTACT SECTION + form -->
+  <!-- 9️⃣ CONTACT SECTION -->
   <section id="contact" style="padding: 80px 0 40px;">
     <div class="container">
-      <h2 class="section-title" data-aos="fade-right">Let’s Build Something Amazing 🚀</h2>
+      <h2 class="section-title">Let’s Build Something Amazing 🚀</h2>
       <div class="grid-2" style="gap: 50px; margin-top: 40px;">
         <!-- contact details -->
-        <div data-aos="fade-up">
-          <p style="font-size: 1.25rem; margin-bottom: 25px;"><i class="fas fa-map-marker-alt" style="color: #4f9cf9; width: 30px;"></i> Barmer, Rajasthan, India</p>
-          <p style="font-size: 1.25rem; margin-bottom: 25px;"><i class="fas fa-phone-alt" style="color: #4f9cf9;"></i> +91 8696228856</p>
-          <p style="font-size: 1.25rem; margin-bottom: 25px;"><i class="fas fa-envelope" style="color: #4f9cf9;"></i> premjatolblogger@gmail.com</p>
-          <p style="font-size: 1.25rem; margin-bottom: 25px;"><i class="fab fa-linkedin" style="color: #4f9cf9;"></i> linkedin.com/in/prem-jatol</p>
+        <div>
+          <p style="font-size: 1.25rem; margin-bottom: 25px; color:#0f172a;"><i class="fas fa-map-marker-alt" style="color: #2563eb; width: 30px;"></i> Barmer, Rajasthan, India</p>
+          <p style="font-size: 1.25rem; margin-bottom: 25px; color:#0f172a;"><i class="fas fa-phone-alt" style="color: #2563eb;"></i> +91 8696228856</p>
+          <p style="font-size: 1.25rem; margin-bottom: 25px; color:#0f172a;"><i class="fas fa-envelope" style="color: #2563eb;"></i> premjatolblogger@gmail.com</p>
+          <p style="font-size: 1.25rem; margin-bottom: 25px; color:#0f172a;"><i class="fab fa-linkedin" style="color: #2563eb;"></i> linkedin.com/in/prem-jatol</p>
           <div style="margin-top: 30px; display: flex; gap: 20px;">
-            <span style="background: #1e2935; padding: 12px 20px; border-radius: 40px;"><i class="fab fa-github"></i> premjatol</span>
-            <span style="background: #1e2935; padding: 12px 20px; border-radius: 40px;"><i class="fab fa-twitter"></i> @premdev</span>
+            <span style="background: #f1f5f9; padding: 12px 20px; border-radius: 40px; color:#0f172a;"><i class="fab fa-github"></i> premjatol</span>
+            <span style="background: #f1f5f9; padding: 12px 20px; border-radius: 40px; color:#0f172a;"><i class="fab fa-twitter"></i> @premdev</span>
           </div>
         </div>
         <!-- contact form -->
-        <div class="card" data-aos="fade-up" data-aos-delay="150">
+        <div class="card">
           <form class="contact-form">
             <div class="form-group">
               <label>Name</label>
@@ -708,28 +740,14 @@
   <!-- 🔟 FOOTER -->
   <footer class="footer">
     <div class="container">
-      <p style="font-size: 1.1rem; font-weight: 500;">© 2026 Prem Jatol | Full Stack Developer</p>
+      <p style="font-size: 1.1rem; font-weight: 500; color: #0f172a;">© 2026 Prem Jatol | Full Stack Developer</p>
       <p style="margin-top: 10px;">Open for Freelance | Contract | Remote Roles</p>
-      <div style="margin-top: 25px; display: flex; gap: 24px; justify-content: center; color: #a0bbdb;">
+      <div style="margin-top: 25px; display: flex; gap: 24px; justify-content: center; color: #2563eb;">
         <a href="#home">Home</a> · <a href="#about">About</a> · <a href="#projects">Projects</a> · <a href="#contact">Contact</a>
       </div>
     </div>
   </footer>
 
-  <!-- AOS animation initialization -->
-  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-  <script>
-    AOS.init({
-      duration: 700,
-      once: false,
-      mirror: true,
-      offset: 40,
-    });
-    // simple mobile menu toggle (just visual, no actual nav because we don't have hamburger menu built)
-    // but for responsiveness, we keep it as static - in real project implement toggle.
-  </script>
-  <script>
-    // additional smooth hover and UI enhancements: no extra needed.
-  </script>
+  <!-- no AOS – only hover animations remain -->
 </body>
 </html>
